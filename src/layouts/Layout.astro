@@ -18,29 +18,34 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div id="app" class="relative h-screen p-2 gap-2 ">
-			<div class="[grid-area:header] flex flex-col overflow-y-auto min-h-[100px] max-h-[100px]">
-				haqe
-			</div>
-			<aside class="[grid-area:aside] flex-col flex overflow-y-auto ">
-				<AsideMenu />
-			</aside>
-			<main class="[grid-area:main] bg-zinc-900 overflow-y-auto "></main>
-			<footer class="[grid-area:player]min-h-[100px]"></footer>
-			
+		<div id="app" class="relative h-screen p-2 gap-2">
+		  <header class="[grid-area:header] bg-red-300 min-h-[55px]">
+			Navbar
+		  </header>
+		  <aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-gray-800">
+			<AsideMenu />
+		  </aside>
+		  <main class="[grid-area:main] bg-zinc-900 overflow-y-auto">
+			Main content
+		  </main>
+		  <footer class="[grid-area:player] bg-green-500">
+			Player
+		  </footer>
 		</div>
-	</body>
+	  </body>
 </html>
 <style>
-	#app{
-		display: grid;
-		grid-template-areas: 
-		"header header header"
-		"aside main main"
-		"player player player";
-		grid-template-columns: 350px 1fr;
-		grid-template-rows: 1fr auto;
-	}
+	#app {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "aside main main"
+      "player player player";
+    grid-template-columns: 350px 1fr;
+    /* grid-template-rows: 100px 1fr 100px; Define la altura explícita para el header y footer */
+    grid-template-rows: auto 1fr auto; /* Define la altura explícita para el header y footer */
+    height: 100vh; /* Asegúrate de que ocupe toda la altura de la pantalla */
+  }
 </style>
 <style is:global>
 	
